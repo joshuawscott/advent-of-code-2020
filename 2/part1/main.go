@@ -28,7 +28,7 @@ func (p policy) Valid(password string) bool {
 var re *regexp.Regexp = regexp.MustCompile(`(\d+)-(\d+) (.): (.+)`)
 
 func main() {
-	file, err := os.Open("input.txt")
+	file, err := os.Open("../input.txt")
 	if err != nil {
 		log.Fatal("can't find file")
 	}
