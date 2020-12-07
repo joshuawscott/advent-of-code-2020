@@ -50,6 +50,7 @@ func (s Slope) At(x, y int) (string, error) {
 	}
 }
 
+// TreesFor detects the trees on a speciric slope
 func (s Slope) TreesFor(xIncr, yIncr int) int {
 	x := 0
 	y := 0
