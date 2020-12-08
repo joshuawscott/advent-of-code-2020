@@ -81,12 +81,21 @@ func main() {
 		seats = append(seats, sa)
 	}
 
-	fmt.Printf("Result: %d\n", highestSeat)
-	fmt.Printf("Result: %d\n", lowestSeat)
+	fmt.Printf("highest: %d\n", highestSeat)
+	fmt.Printf("lowest: %d\n", lowestSeat)
 	sort.Slice(seats, func(i, j int) bool {
 		return seats[i].SeatID < seats[j].SeatID
 	})
-	for _, v := range seats {
+
+	var mySeat int64
+	prevSeat := seats[0].SeatID
+	for _, sa := range seats {
+		if sa.SeatID-2 == prevSeat {
+			mySeat = sa.SeatID - 1
+			break
+		}
+		prevSeat = sa.SeatID
 	}
+	fmt.Printf("My seat: %d", mySeat)
 
 }
